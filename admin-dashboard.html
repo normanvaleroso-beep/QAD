@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | QAD DepEd Region XII</title>
+  <meta name="description" content="Secure administrative dashboard for QAD personnel — manage announcements, documents, statistics and personnel.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#001b4d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="admin-body">
+
+  <!-- ========== LOGIN ========== -->
+  <div class="admin-shell is-login" id="login-view">
+    <div class="admin-login">
+      <div class="login-card">
+        <div class="brand-mini">
+          <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true" style="margin:0 auto .5rem;">
+            <circle cx="32" cy="32" r="30" fill="#0038a8" stroke="#fcd116" stroke-width="3"/>
+            <path d="M20 38c4-6 8-9 12-9s8 3 12 9" fill="none" stroke="#fcd116" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M32 20v10M27 24l5-4 5 4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <strong style="color:var(--blue-900);display:block;">QAD Content Management</strong>
+          DepEd SOCCSKSARGEN Region XII
+        </div>
+        <h1>Admin Sign In</h1>
+        <p class="text-muted text-center" style="font-size:.86rem;">Authorized Quality Assurance Division personnel only.</p>
+
+        <div class="demo-note">
+          <strong>DEMO MODE</strong> — no real authentication. Use the demo accounts below (client-side only). Replace with a secure server-side auth in production.
+          <br><br>
+          <strong>admin / admin123</strong> — Full access (Admin)<br>
+          <strong>editor / editor123</strong> — Content editing (Editor)<br>
+          <strong>viewer / viewer123</strong> — Read-only (Viewer)
+        </div>
+
+        <form id="login-form">
+          <div class="field" style="margin-bottom:.9rem;">
+            <label for="login-user">Username</label>
+            <input id="login-user" name="username" type="text" autocomplete="username" required>
+          </div>
+          <div class="field" style="margin-bottom:1.1rem;">
+            <label for="login-pass">Password</label>
+            <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <div class="form-status" id="login-status" tabindex="-1" role="alert"></div>
+          <button class="btn btn--primary btn--block" type="submit">Sign In</button>
+        </form>
+        <p class="text-center" style="margin-top:1.1rem;font-size:.84rem;">
+          <a href="index.html">← Back to website</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== APP ========== -->
+  <div class="admin-shell" id="app-view">
+    <aside class="admin-side" aria-label="Admin navigation">
+      <div class="admin-side__brand">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0038a8" stroke="#fcd116" stroke-width="3"/>
+          <path d="M32 20v10M27 24l5-4 5 4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div><strong>QAD Admin</strong><span>Region XII CMS</span></div>
+      </div>
+      <ul class="admin-nav">
+        <li><button type="button" class="is-active" data-panel="overview">Overview</button></li>
+        <li><button type="button" data-panel="announcements">Announcements <span class="badge" id="badge-ann">0</span></button></li>
+        <li><button type="button" data-panel="issuances">Issuances <span class="badge" id="badge-iss">0</span></button></li>
+        <li><button type="button" data-panel="forms">Forms <span class="badge" id="badge-form">0</span></button></li>
+        <li><button type="button" data-panel="statistics">Dashboard Statistics</button></li>
+        <li><button type="button" data-panel="sdos">SDO Directory</button></li>
+        <li><button type="button" data-panel="personnel">Personnel</button></li>
+        <li><button type="button" data-panel="users">Users &amp; Roles</button></li>
+      </ul>
+      <div style="padding:1rem 1.2rem 0;border-top:1px solid rgba(255,255,255,.12);">
+        <a class="btn btn--ghost-light btn--sm btn--block" href="index.html" style="color:#cdd9f5;border-color:rgba(255,255,255,.35);">View Website</a>
+        <button class="btn btn--sm btn--block" type="button" id="logout-btn" style="margin-top:.5rem;background:rgba(255,255,255,.1);color:#fff;border-color:transparent;">Sign Out</button>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-top">
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <button class="icon-btn admin-mobile-nav" type="button" id="admin-nav-toggle" aria-label="Toggle admin menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <h1 id="panel-title">Overview</h1>
+        </div>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <span class="who">Signed in as <strong id="who-user">admin</strong> · <span class="role-pill admin" id="who-role">Admin</span></span>
+          <button class="btn btn--sm btn--outline" type="button" id="logout-btn-2">Sign Out</button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+
+        <!-- OVERVIEW -->
+        <section class="admin-panel is-active" id="panel-overview" aria-labelledby="panel-title">
+          <div class="callout callout--info" style="margin-bottom:1.2rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            <span><strong>Demo CMS.</strong> Changes you make are saved to this browser only (localStorage). Production will use a database-backed API with role-based access control and audit logs.</span>
+          </div>
+          <div class="stat-mini-grid">
+            <div class="stat-mini"><strong id="ov-ann">0</strong><span>Announcements</span></div>
+            <div class="stat-mini"><strong id="ov-iss">0</strong><span>Issuances</span></div>
+            <div class="stat-mini"><strong id="ov-form">0</strong><span>Forms</span></div>
+            <div class="stat-mini"><strong id="ov-sdo">0</strong><span>SDOs</span></div>
+            <div class="stat-mini"><strong>3</strong><span>Users (demo)</span></div>
+            <div class="stat-mini"><strong>v1.0</strong><span>CMS Version</span></div>
+          </div>
+          <div class="panel">
+            <div class="panel__head"><h3>Quick Actions</h3></div>
+            <div class="panel__body" style="display:flex;flex-wrap:wrap;gap:.6rem;">
+              <button class="btn btn--primary btn--sm" type="button" data-quick="announcements">+ New Announcement</button>
+              <button class="btn btn--outline btn--sm" type="button" data-quick="issuances">+ New Issuance</button>
+              <button class="btn btn--outline btn--sm" type="button" data-quick="forms">+ New Form</button>
+              <button class="btn btn--outline btn--sm" type="button" data-quick="statistics">Update Statistics</button>
+              <button class="btn btn--outline btn--sm" type="button" data-quick="personnel">Manage Personnel</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ANNOUNCEMENTS -->
+        <section class="admin-panel" id="panel-announcements" aria-label="Manage announcements">
+          <div class="panel" style="margin-bottom:1rem;">
+            <div class="panel__head"><h3>Add / Edit Announcement</h3></div>
+            <div class="panel__body">
+              <form id="ann-form" class="form-row form-row--2">
+                <input type="hidden" name="id">
+                <div class="field"><label for="ann-date">Date</label><input id="ann-date" name="date" type="date" required></div>
+                <div class="field"><label for="ann-cat">Category</label>
+                  <select id="ann-cat" name="cat" required>
+                    <option>Training</option><option>Audit Schedule</option><option>Monitoring Schedule</option>
+                    <option>Deadline</option><option>Meeting</option><option>Workshop</option><option>Regional Activity</option>
+                  </select>
+                </div>
+                <div class="field" style="grid-column:1/-1;"><label for="ann-title">Title</label><input id="ann-title" name="title" type="text" required placeholder="[Official title]"></div>
+                <div class="field" style="grid-column:1/-1;"><label for="ann-desc">Short Description</label><textarea id="ann-desc" name="desc" rows="2" required></textarea></div>
+                <div style="grid-column:1/-1;display:flex;gap:.6rem;">
+                  <button class="btn btn--primary btn--sm" type="submit">Save Announcement</button>
+                  <button class="btn btn--outline btn--sm" type="reset">Clear</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Date</th><th>Title</th><th>Category</th><th>Actions</th></tr></thead>
+              <tbody id="ann-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ISSUANCES -->
+        <section class="admin-panel" id="panel-issuances" aria-label="Manage issuances">
+          <div class="panel" style="margin-bottom:1rem;">
+            <div class="panel__head"><h3>Add Issuance <span class="chip chip--placeholder">Upload PDF in production</span></h3></div>
+            <div class="panel__body">
+              <form id="iss-form" class="form-row form-row--2">
+                <div class="field"><label for="ni-type">Type</label>
+                  <select id="ni-type" name="type" required>
+                    <option>DepEd Orders</option><option>DepEd Memoranda</option><option>Regional Memoranda</option>
+                    <option>Regional Advisories</option><option>Office Orders</option><option>Special Orders</option>
+                    <option>QA Guidelines</option><option>QMS Documents</option><option>Monitoring Guidelines</option>
+                  </select>
+                </div>
+                <div class="field"><label for="ni-num">Document Number</label><input id="ni-num" name="num" type="text" required placeholder="e.g., DO No. 000, s. 2026"></div>
+                <div class="field" style="grid-column:1/-1;"><label for="ni-title">Title</label><input id="ni-title" name="title" type="text" required></div>
+                <div class="field"><label for="ni-date">Date Issued</label><input id="ni-date" name="date" type="date" required></div>
+                <div class="field"><label for="ni-file">PDF File</label><input id="ni-file" name="file" type="file" accept=".pdf" style="padding:.45rem;"></div>
+                <div class="field" style="grid-column:1/-1;"><label for="ni-desc">Description</label><textarea id="ni-desc" name="desc" rows="2"></textarea></div>
+                <div style="grid-column:1/-1;">
+                  <button class="btn btn--primary btn--sm" type="submit">Save Issuance</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Number</th><th>Title</th><th>Type</th><th>Date</th><th>Actions</th></tr></thead>
+              <tbody id="iss-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- FORMS -->
+        <section class="admin-panel" id="panel-forms" aria-label="Manage forms">
+          <div class="panel" style="margin-bottom:1rem;">
+            <div class="panel__head"><h3>Add Form / Template</h3></div>
+            <div class="panel__body">
+              <form id="frm-form" class="form-row form-row--2">
+                <div class="field"><label for="nf-cat">Category</label>
+                  <select id="nf-cat" name="cat" required>
+                    <option>QA Forms</option><option>Monitoring Forms</option><option>Evaluation Forms</option>
+                    <option>QMS Templates</option><option>Audit Forms</option><option>RCA/CAPA Templates</option>
+                    <option>Risk Registry Templates</option><option>Technical Assistance Forms</option>
+                    <option>Reports Templates</option><option>Other QAD Forms</option>
+                  </select>
+                </div>
+                <div class="field"><label for="nf-num">Form Number</label><input id="nf-num" name="num" type="text" required placeholder="QAD-F-000"></div>
+                <div class="field" style="grid-column:1/-1;"><label for="nf-title">Title</label><input id="nf-title" name="title" type="text" required></div>
+                <div class="field"><label for="nf-updated">Last Updated</label><input id="nf-updated" name="updated" type="date" required></div>
+                <div class="field"><label for="nf-file">File</label><input id="nf-file" name="file" type="file" style="padding:.45rem;"></div>
+                <div class="field" style="grid-column:1/-1;"><label for="nf-desc">Description</label><textarea id="nf-desc" name="desc" rows="2"></textarea></div>
+                <div style="grid-column:1/-1;"><button class="btn btn--primary btn--sm" type="submit">Save Form</button></div>
+              </form>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Number</th><th>Title</th><th>Category</th><th>Updated</th><th>Actions</th></tr></thead>
+              <tbody id="frm-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="admin-panel" id="panel-statistics" aria-label="Dashboard statistics">
+          <div class="sample-banner" role="note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            <span>Values saved here replace the KPI cards on the homepage and Monitoring page (browser demo).</span>
+          </div>
+          <div class="panel">
+            <div class="panel__head"><h3>QA Dashboard KPIs</h3></div>
+            <div class="panel__body">
+              <form id="kpi-form" class="form-row form-row--2" style="gap:.8rem;">
+                <!-- filled by admin.js -->
+              </form>
+              <button class="btn btn--primary btn--sm mt-1" type="submit" form="kpi-form">Save Statistics</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SDOs -->
+        <section class="admin-panel" id="panel-sdos" aria-label="Manage SDO directory">
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Division</th><th>Address</th><th>QA Focal</th><th>Actions</th></tr></thead>
+              <tbody id="sdo-table"></tbody>
+            </table>
+          </div>
+          <p class="text-muted" style="font-size:.84rem;margin-top:.8rem;">Click Edit to update address, contacts, focal person, and available QA resources for each SDO.</p>
+        </section>
+
+        <!-- PERSONNEL -->
+        <section class="admin-panel" id="panel-personnel" aria-label="Manage personnel">
+          <div class="panel" style="margin-bottom:1rem;">
+            <div class="panel__head"><h3>Add Personnel <span class="chip chip--placeholder">Names are placeholders until official roster provided</span></h3></div>
+            <div class="panel__body">
+              <form id="per-form" class="form-row form-row--2">
+                <div class="field"><label for="np-name">Full Name</label><input id="np-name" name="name" type="text" required placeholder="[Full Name]"></div>
+                <div class="field"><label for="np-role">Designation</label><input id="np-role" name="role" type="text" required placeholder="e.g., QMS Focal"></div>
+                <div class="field"><label for="np-email">Email</label><input id="np-email" name="email" type="email" placeholder="[Email]"></div>
+                <div class="field"><label for="np-unit">Unit</label><input id="np-unit" name="unit" type="text" placeholder="e.g., M&E Unit"></div>
+                <div style="grid-column:1/-1;"><button class="btn btn--primary btn--sm" type="submit">Save Personnel</button></div>
+              </form>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Name</th><th>Designation</th><th>Unit</th><th>Email</th><th>Actions</th></tr></thead>
+              <tbody id="per-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- USERS -->
+        <section class="admin-panel" id="panel-users" aria-label="Users and roles">
+          <div class="callout" style="margin-bottom:1rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>
+            <span>Role-based access control (demo): <strong>Admin</strong> = full CRUD · <strong>Editor</strong> = content only · <strong>Viewer</strong> = read-only. Production must enforce roles server-side.</span>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead><tr><th>Username</th><th>Role</th><th>Status</th><th>Permissions</th></tr></thead>
+              <tbody>
+                <tr><td>admin</td><td><span class="role-pill admin">Admin</span></td><td>Active</td><td>All modules, user management, statistics</td></tr>
+                <tr><td>editor</td><td><span class="role-pill editor">Editor</span></td><td>Active</td><td>Announcements, documents, resources</td></tr>
+                <tr><td>viewer</td><td><span class="role-pill viewer">Viewer</span></td><td>Active</td><td>Read-only access</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
+</body>
+</html>
