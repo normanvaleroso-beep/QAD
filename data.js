@@ -77,8 +77,17 @@ window.QAD_DATA = {
     { id: "dq", icon: "database", title: "Data Quality Assurance", desc: "Validation, verification, and governance of education data used for planning and decision-making.", cat: "monitoring" }
   ],
 
-  /* ---------- Issuances (SAMPLE documents) ---------- */
+  /* ---------- Issuances ----------
+     Entries with a `pdf` field are REAL official documents (files in /docs/).
+     Entries without `pdf` are SAMPLE records clearly marked in the UI. */
   issuances: [
+    { id: 101, type: "Office Memoranda", num: "QAD-2026-211", title: "Finalization of PQA Regionalization Self-Assessment", date: "2026-09-10", year: "2026", desc: "Office Memorandum on the finalization of the PQA Regionalization Self-Assessment.", pdf: "docs/om-qad-2026-211-pqa-regionalization.pdf", sample: false },
+    { id: 102, type: "Regional Memoranda", num: "QAD-2026-018", title: "PISA-Based for Schools 2026 National Orientation and Training", date: "2026-09-09", year: "2026", desc: "Regional Memorandum on the PISA-Based for Schools 2026 National Orientation and Training.", pdf: "docs/rm-qad-2026-018-pisa-based-schools-2026.pdf", sample: false },
+    { id: 103, type: "Office Memoranda", num: "QAD-2026-201", title: "3rd Quarter Regional Professional Learning Community (RPLC)", date: "2026-09-09", year: "2026", desc: "Office Memorandum on the 3rd Quarter Regional Professional Learning Community (RPLC).", pdf: "docs/om-qad-2026-201-rplc-q3.pdf", sample: false },
+    { id: 104, type: "Office Memoranda", num: "QAD-2026-199", title: "Adoption of SOX PRExCI Framework", date: "2026-09-03", year: "2026", desc: "Office Memorandum on the adoption of the SOX PRExCI Framework.", pdf: "docs/om-qad-2026-199-sox-prexci-framework.pdf", sample: false },
+    { id: 105, type: "Regional Advisories", num: "Advisory No. 059, s. 2026 · QAD-2026-059", title: "Application for the Philippine Science High School National Competitive Examination (NCE) 2027", date: "2026-08-18", year: "2026", desc: "Announcement of PSHS applications for incoming Grade 7 students, S.Y. 2027–2028 (application window: June 16 – November 7, 2026). Issued in compliance with DO No. 8, s. 2013.", pdf: "docs/ra-qad-2026-059-pshs-nce-2027.pdf", sample: false },
+    { id: 106, type: "Regional Memoranda", num: "QAD-2026-016", title: "Application for Government Recognition of Private Institutions Offering SHS Program", date: "2026-08-11", year: "2026", desc: "Regional Memorandum on the application for government recognition of private institutions offering the Senior High School program.", pdf: "docs/rm-qad-2026-016-government-recognition-shs.pdf", sample: false },
+
     { id: 1, type: "DepEd Orders", num: "DO No. 000, s. 2026", title: "[Sample] Policy on Regional Quality Assurance Standards", date: "2026-01-10", year: "2026", desc: "Sample record demonstrating a DepEd Order entry in the repository." },
     { id: 2, type: "DepEd Orders", num: "DO No. 000, s. 2025", title: "[Sample] Guidelines on National Quality Benchmarks", date: "2025-08-15", year: "2025", desc: "Sample record. Official title and number to be supplied by QAD." },
     { id: 3, type: "DepEd Memoranda", num: "DM-OSEC-No. 000, s. 2026", title: "[Sample] Conduct of Internal Quality Audits", date: "2026-02-03", year: "2026", desc: "Sample memorandum entry for audit scheduling." },
@@ -99,8 +108,8 @@ window.QAD_DATA = {
     { id: 18, type: "QA Guidelines", num: "QAG-002", title: "[Sample] Internal Audit Procedure", date: "2024-12-02", year: "2024", desc: "Sample internal audit procedure record." }
   ],
   issuanceTypes: [
-    "DepEd Orders", "DepEd Memoranda", "Regional Memoranda", "Regional Advisaries",
-    "Office Orders", "Special Orders", "QA Guidelines", "QMS Documents", "Monitoring Guidelines"
+    "DepEd Orders", "DepEd Memoranda", "Regional Memoranda", "Regional Advisories",
+    "Office Orders", "Office Memoranda", "Special Orders", "QA Guidelines", "QMS Documents", "Monitoring Guidelines"
   ],
 
   /* ---------- Forms & Templates (SAMPLE) ---------- */

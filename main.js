@@ -379,22 +379,34 @@
         tbody.innerHTML = `<tr><td colspan="1"><div class="empty-state">No documents match your filters. Try clearing the search field or filters.</div></td></tr>`;
         return;
       }
-      tbody.innerHTML = rows.map(d => `
+      tbody.innerHTML = rows.map(d => {
+        const hasPdf = !!d.pdf;
+        const chip = hasPdf
+          ? '<span class="chip chip--green">Official</span>'
+          : '<span class="chip chip--sample">Sample</span>';
+        const viewAttr = hasPdf
+          ? `href="${d.pdf}" target="_blank" rel="noopener noreferrer"`
+          : `href="#" data-demo-download="${d.title}"`;
+        const dlAttr = hasPdf
+          ? `href="${d.pdf}" download data-demo-pdf="${d.title}"`
+          : `href="#" data-demo-download="${d.title}"`;
+        return `
         <tr id="doc-${d.id}">
           <td>
             <div class="doc-title">${d.title}</div>
             <div class="text-muted" style="font-size:.84rem;">${d.desc}</div>
-            <div class="card__meta" style="margin:.5rem 0 0;"><span class="chip chip--blue">${d.type}</span><span class="chip chip--sample">Sample</span></div>
+            <div class="card__meta" style="margin:.5rem 0 0;"><span class="chip chip--blue">${d.type}</span>${chip}</div>
           </td>
           <td class="doc-num">${d.num}</td>
           <td>${fmtDate(d.date)}</td>
           <td>
             <div class="btn-row">
-              <a class="btn btn--sm btn--outline" href="#" data-demo-download="${d.title}" aria-label="View ${d.title}">${iconSvg("search-doc", 15)} View</a>
-              <a class="btn btn--sm btn--primary" href="#" data-demo-download="${d.title}" aria-label="Download PDF of ${d.title}">${iconSvg("download", 15)} PDF</a>
+              <a class="btn btn--sm btn--outline" ${viewAttr} aria-label="View ${d.title}">${iconSvg("search-doc", 15)} View</a>
+              <a class="btn btn--sm btn--primary" ${dlAttr} aria-label="Download PDF of ${d.title}">${iconSvg("download", 15)} PDF</a>
             </div>
           </td>
-        </tr>`).join("");
+        </tr>`;
+      }).join("");
     }
     /* deep links: issuances.html?type=DepEd%20Orders or ?year=2026 */
     const params = new URLSearchParams(location.search);
@@ -700,6 +712,9 @@
 
   /* ---------- Demo download / read-more notices ---------- */
   document.addEventListener("click", e => {
+    /* Real PDFs: let the native href/download proceed untouched */
+    const realPdf = e.target.closest("[data-demo-pdf]");
+    if (realPdf) return;
     const dl = e.target.closest("[data-demo-download]");
     if (dl) {
       e.preventDefault();

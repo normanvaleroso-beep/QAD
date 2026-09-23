@@ -17,10 +17,14 @@
     <div class="admin-login">
       <div class="login-card">
         <div class="brand-mini">
-          <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true" style="margin:0 auto .5rem;">
-            <circle cx="32" cy="32" r="30" fill="#0038a8" stroke="#fcd116" stroke-width="3"/>
-            <path d="M20 38c4-6 8-9 12-9s8 3 12 9" fill="none" stroke="#fcd116" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M32 20v10M27 24l5-4 5 4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true" style="margin:0 auto .5rem;">
+            <circle cx="32" cy="32" r="30.5" fill="#0038a8"/>
+            <circle cx="32" cy="32" r="30.5" fill="none" stroke="#fcd116" stroke-width="3"/>
+            <circle cx="32" cy="32" r="25" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+            <path fill="#fcd116" d="M32 11.5 33.9 16.4 39.1 16.7 35 20 36.4 25.1 32 22.2 27.6 25.1 29 20 24.9 16.7 30.1 16.4Z"/>
+            <path fill="#ffffff" d="M15.5 35.8C21 32.6 26.8 32.6 31 35.4V48.4C26.8 45.6 21 45.6 15.5 48.8Z"/>
+            <path fill="#ffffff" d="M48.5 35.8C43 32.6 37.2 32.6 33 35.4V48.4C37.2 45.6 43 45.6 48.5 48.8Z"/>
+            <rect x="31" y="35" width="2" height="13.6" rx="1" fill="#fcd116"/>
           </svg>
           <strong style="color:var(--blue-900);display:block;">QAD Content Management</strong>
           DepEd SOCCSKSARGEN Region XII
@@ -59,9 +63,13 @@
   <div class="admin-shell" id="app-view">
     <aside class="admin-side" aria-label="Admin navigation">
       <div class="admin-side__brand">
-        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="30" fill="#0038a8" stroke="#fcd116" stroke-width="3"/>
-          <path d="M32 20v10M27 24l5-4 5 4" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30.5" fill="#0038a8"/>
+          <circle cx="32" cy="32" r="30.5" fill="none" stroke="#fcd116" stroke-width="3"/>
+          <path fill="#fcd116" d="M32 11.5 33.9 16.4 39.1 16.7 35 20 36.4 25.1 32 22.2 27.6 25.1 29 20 24.9 16.7 30.1 16.4Z"/>
+          <path fill="#ffffff" d="M15.5 35.8C21 32.6 26.8 32.6 31 35.4V48.4C26.8 45.6 21 45.6 15.5 48.8Z"/>
+          <path fill="#ffffff" d="M48.5 35.8C43 32.6 37.2 32.6 33 35.4V48.4C37.2 45.6 43 45.6 48.5 48.8Z"/>
+          <rect x="31" y="35" width="2" height="13.6" rx="1" fill="#fcd116"/>
         </svg>
         <div><strong>QAD Admin</strong><span>Region XII CMS</span></div>
       </div>
@@ -163,7 +171,7 @@
                 <div class="field"><label for="ni-type">Type</label>
                   <select id="ni-type" name="type" required>
                     <option>DepEd Orders</option><option>DepEd Memoranda</option><option>Regional Memoranda</option>
-                    <option>Regional Advisories</option><option>Office Orders</option><option>Special Orders</option>
+                    <option>Regional Advisories</option><option>Office Orders</option><option>Office Memoranda</option><option>Special Orders</option>
                     <option>QA Guidelines</option><option>QMS Documents</option><option>Monitoring Guidelines</option>
                   </select>
                 </div>
