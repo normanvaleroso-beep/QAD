@@ -4,6 +4,20 @@
    Replace via the Admin Dashboard or by editing this file.
    ============================================================ */
 window.QAD_DATA = {
+  /* ---------- Official info from QAD Operations Manual ---------- */
+  official: {
+    address: "Prime Regional Government Center, Brgy. Carpenter Hill, City of Koronadal",
+    phones: "(083) 2288825 / (083) 2281893",
+    email: "region12@deped.gov.ph",
+    website: "https://depedroxii.org",
+    manualPdf: "qad-operations-manual.pdf",
+    chief: "Norman S. Valeroso, PhD",
+    chiefRole: "Chief, Quality Assurance Division (Chief Education Supervisor)",
+    rd: "Atty. Alberto T. Escobarte, CESO II",
+    rdRole: "Regional Director, DepEd SOCCSKSARGEN Region XII",
+    effective: "July 16, 2025"
+  },
+
 
   notice: "All statistics and records shown are SAMPLE DATA for layout demonstration only.",
 
@@ -127,12 +141,59 @@ window.QAD_DATA = {
     { id: 11, cat: "Reports Templates", title: "[Sample] Monthly QA Accomplishment Report", num: "QAD-T-005", updated: "2026-01-05", desc: "Monthly report template for QA personnel." },
     { id: 12, cat: "Reports Templates", title: "[Sample] PIR Results Template", num: "QAD-T-006", updated: "2025-09-30", desc: "Template for Program Implementation Review results." },
     { id: 13, cat: "Other QAD Forms", title: "[Sample] Document Transmittal Slip", num: "QAD-F-007", updated: "2025-07-14", desc: "Official transmittal of QAD documents." },
-    { id: 14, cat: "QA Forms", title: "[Sample] Stakeholder Feedback Form", num: "QAD-F-008", updated: "2026-03-02", desc: "Collects feedback on QAD services for improvement." }
+    { id: 14, cat: "QA Forms", title: "[Sample] Stakeholder Feedback Form", num: "QAD-F-008", updated: "2026-03-02", desc: "Collects feedback on QAD services for improvement." },
+    { id: 501, cat: "Regulatory & Endorsement", title: "Endorsement – Closure", num: "RO12-QAD-F008", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 502, cat: "Monitoring Forms", title: "QAME Request Form", num: "RO12-QAD-F025", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 503, cat: "Monitoring Forms", title: "Weekly Validation Plan", num: "RO12-QAD-F061", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 504, cat: "Regulatory & Endorsement", title: "Government Recognition", num: "RO12-QAD-F108", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 505, cat: "Regulatory & Endorsement", title: "Integrated School Endorsement", num: "RO12-QAD-F109", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 506, cat: "Regulatory & Endorsement", title: "Renaming of School Endorsement", num: "RO12-QAD-F110", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 507, cat: "Regulatory & Endorsement", title: "School Opening Endorsement", num: "RO12-QAD-F111", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 508, cat: "Regulatory & Endorsement", title: "Senior High School Endorsement – Private", num: "RO12-QAD-F112", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 509, cat: "Regulatory & Endorsement", title: "Senior High School Endorsement – Public", num: "RO12-QAD-F113", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 510, cat: "Regulatory & Endorsement", title: "Separation of School Endorsement", num: "RO12-QAD-F117", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 511, cat: "Regulatory & Endorsement", title: "Change of Name Certification", num: "RO12-QAD-F152", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 512, cat: "Regulatory & Endorsement", title: "Permit to Operate", num: "RO12-QAD-F160", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 513, cat: "Special Orders", title: "Special Order – Non-Resident", num: "RO12-QAD-F161", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 514, cat: "Special Orders", title: "Special Order – SHS", num: "RO12-QAD-F162", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 515, cat: "Regulatory & Endorsement", title: "Certification of No Tuition Fee Increase", num: "RO12-QAD-F183", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 516, cat: "Evaluation Forms", title: "Activity Evaluation Form", num: "RO12-QAD-F219", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 517, cat: "Regulatory & Endorsement", title: "Checklist for SEC Endorsement", num: "RO12-QAD-F223", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 518, cat: "Regulatory & Endorsement", title: "Checklist for Application of Government Permit (GP) or Government Recognition (GR)", num: "RO12-QAD-F560", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 519, cat: "Other QAD Forms", title: "Payment Slip", num: "RO12-QAD-F236", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 520, cat: "Monitoring Forms", title: "Monitoring Report Form", num: "RO12-QAD-F238", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 521, cat: "Monitoring Forms", title: "Onsite Validation Standards", num: "RO12-QAD-F239", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 522, cat: "Regulatory & Endorsement", title: "SHS Permit", num: "RO12-QAD-F252", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 523, cat: "Monitoring Forms", title: "Process Observation Checklist for PIR/RMEPA", num: "RO12-QAD-F255", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 524, cat: "Monitoring Forms", title: "Progress M&E Tool for Programs, Projects and Activities", num: "RO12-QAD-F256", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 525, cat: "Monitoring Forms", title: "PIR/RMEPA Synthesis Tool", num: "RO12-QAD-F257", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 526, cat: "Monitoring Forms", title: "Rubrics in Determining Level of Priority of PIR/RMEPA Issues", num: "RO12-QAD-F258", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 527, cat: "Regulatory & Endorsement", title: "Application for the Opening/Additional Offering of Senior High School", num: "RO12-QAD-F290", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 528, cat: "Monitoring Forms", title: "Online/Onsite Validation Report", num: "RO12-QAD-F314", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 529, cat: "Monitoring Forms", title: "Public Schools Database 2023", num: "RO12-QAD-F320", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 530, cat: "Monitoring Forms", title: "QAME Request Tracker", num: "RO12-QAD-F322", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 531, cat: "Special Orders", title: "Special Order 2022 Monitoring", num: "RO12-QAD-F338", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 532, cat: "Monitoring Forms", title: "Compliance Form", num: "RO12-QAD-F348", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 533, cat: "Monitoring Forms", title: "Standards for Online Validation", num: "RO12-QAD-F402", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 534, cat: "Monitoring Forms", title: "Regional Pretest and Posttest for NQESH Category B Aspiring School Heads", num: "RO12-QAD-F423", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 535, cat: "Other QAD Forms", title: "Tax Exemption Certificate", num: "RO12-QAD-F429", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 536, cat: "Reports Templates", title: "Accomplishment Report", num: "RO12-QAD-F468", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 537, cat: "Regulatory & Endorsement", title: "Government Permit and Recognition Quality Standard", num: "RO12-QAD-F479", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 538, cat: "Regulatory & Endorsement", title: "Quality Standard Checklist for Endorsement", num: "RO12-QAD-F480", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 539, cat: "Special Orders", title: "Quality Standard Checklist for Special Order", num: "RO12-QAD-F481", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 540, cat: "Other QAD Forms", title: "Routing Slip", num: "RO12-QAD-F482", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 541, cat: "Regulatory & Endorsement", title: "Checklist for Closure", num: "RO12-QAD-F531", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 542, cat: "Reports Templates", title: "Annual Report", num: "RO12-QAD-F537", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 543, cat: "Monitoring Forms", title: "RMEPA Agreements Status", num: "RO12-QAD-F544", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 544, cat: "Monitoring Forms", title: "Summary of QAME Results", num: "RO12-QAD-F556", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 545, cat: "Monitoring Forms", title: "Quarterly Implementation Review PPT", num: "RO12-QAD-F613", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 546, cat: "Regulatory & Endorsement", title: "Endorsement for Redistricting", num: "RO12-QAD-F672", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false },
+    { id: 547, cat: "Monitoring Forms", title: "Summary of RPLC QAME Results", num: "RO12-QAD-F673", updated: "2025-07-16", desc: "Official QAD form from the QAD Operations Manual (OpsManual Rev 00). Controlled document — request the current file from QAD.", sample: false }
   ],
   formCategories: [
     "QA Forms", "Monitoring Forms", "Evaluation Forms", "QMS Templates", "Audit Forms",
     "RCA/CAPA Templates", "Risk Registry Templates", "Technical Assistance Forms",
-    "Reports Templates", "Other QAD Forms"
+    "Reports Templates", "Other QAD Forms", "Regulatory & Endorsement"
   ],
 
   /* ---------- Announcements (SAMPLE) ---------- */
@@ -150,6 +211,9 @@ window.QAD_DATA = {
 
   /* ---------- Knowledge Hub resources (SAMPLE) ---------- */
   resources: [
+    { id: 11, cat: "QA Guidelines", title: "QAD Operations Manual", type: "PDF", desc: "Official Quality Assurance Division Operations Manual — purpose, organizational structure, office functions, legal bases, quality control plans, and forms/templates. Doc. Ref. Code OpsManual Rev 00.", updated: "2025-07-16", pdf: "qad-operations-manual.pdf", sample: false },
+    { id: 12, cat: "FAQs", title: "What is the mandate of QAD?", type: "Web", desc: "QAD provides the Regional Office and SDOs a guide in decision-making and policy directions compliant with standards of quality basic education by promoting accountability and transparency towards continuous improvement. KRAs: (1) QA Framework, Policies, Systems and Processes; (2) Assessment, Monitoring, and Evaluation; (3) Regulatory and Developmental Services to Schools.", updated: "2025-07-16", sample: false },
+    { id: 13, cat: "QA Guidelines", title: "QAD Structure at a Glance", type: "Web", desc: "DepEd SOCCSKSARGEN operates with eight functional divisions. QAD is headed by a Chief Education Supervisor, assisted by five (5) Education Program Supervisors and one (1) Administrative Assistant.", updated: "2025-07-16", sample: false },
     { id: 1, cat: "QA Guidelines", title: "[Sample] Regional QA Framework Primer", type: "PDF", desc: "Introductory guide to the regional quality assurance framework.", updated: "2026-02-10" },
     { id: 2, cat: "FAQs", title: "[Sample] Frequently Asked Questions on QMS", type: "Web", desc: "Common questions on quality management system implementation.", updated: "2026-01-28" },
     { id: 3, cat: "Learning Resources", title: "[Sample] Fundamentals of Quality Assurance in Education", type: "PDF", desc: "Self-learning module on QA concepts for educators.", updated: "2025-11-15" },
@@ -185,6 +249,8 @@ window.QAD_DATA = {
 
   /* ---------- Download center (SAMPLE) ---------- */
   downloads: [
+    { id: 9, cat: "Policies", title: "QAD Operations Manual (OpsManual Rev 00)", fmt: "PDF", size: "1.9 MB", updated: "2025-07-16", pdf: "qad-operations-manual.pdf", sample: false },
+    { id: 10, cat: "Guidelines", title: "QAD Organizational Structure & Office Functions", fmt: "PDF", size: "1.9 MB", updated: "2025-07-16", pdf: "qad-operations-manual.pdf", sample: false },
     { id: 1, cat: "Policies", title: "[Sample] Regional QA Policy Record", fmt: "PDF", size: "—", updated: "2026-01-10" },
     { id: 2, cat: "Guidelines", title: "[Sample] Monitoring and Evaluation Guidelines", fmt: "PDF", size: "—", updated: "2025-11-01" },
     { id: 3, cat: "Forms", title: "[Sample] QA Forms Bundle", fmt: "PDF", size: "—", updated: "2026-01-12" },

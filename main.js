@@ -435,17 +435,31 @@
       );
       count.textContent = `${rows.length} form${rows.length === 1 ? "" : "s"} found`;
       if (!rows.length) { list.innerHTML = `<div class="empty-state">No forms match your search.</div>`; return; }
-      list.innerHTML = rows.map(f => `
+      list.innerHTML = rows.map(f => {
+        const official = f.sample === false;
+        const chip = f.pdf
+          ? '<span class="chip chip--green">Official</span>'
+          : official
+            ? '<span class="chip chip--green">Official · request file</span>'
+            : '<span class="chip chip--sample">Sample</span>';
+        const viewAttr = f.pdf
+          ? `href="${f.pdf}" target="_blank" rel="noopener noreferrer"`
+          : `href="#" data-demo-download="${f.title}"`;
+        const dlAttr = f.pdf
+          ? `href="${f.pdf}" download data-demo-pdf="${f.title}"`
+          : `href="#" data-demo-download="${f.title}"`;
+        return `
         <div class="download-row" id="form-${f.id}">
           <div class="download-row__info">
             <strong>${f.title}</strong>
-            <span>${f.num} · ${f.cat} · Updated ${fmtDate(f.updated)} <span class="chip chip--sample">Sample</span></span>
+            <span>${f.num} · ${f.cat} · Updated ${fmtDate(f.updated)} ${chip}</span>
           </div>
           <div class="download-row__actions">
-            <a class="btn btn--sm btn--outline" href="#" data-demo-download="${f.title}">${iconSvg("search-doc", 15)} View Document</a>
-            <a class="btn btn--sm btn--primary" href="#" data-demo-download="${f.title}">${iconSvg("download", 15)} Download</a>
+            <a class="btn btn--sm btn--outline" ${viewAttr}>${iconSvg("search-doc", 15)} View Document</a>
+            <a class="btn btn--sm btn--primary" ${dlAttr}>${iconSvg("download", 15)} Download</a>
           </div>
-        </div>`).join("");
+        </div>`;
+      }).join("");
     }
     /* deep links: forms.html?cat=QMS%20Templates or ?q=checklist */
     const params = new URLSearchParams(location.search);
@@ -525,19 +539,33 @@
       );
       count.textContent = `${rows.length} resource${rows.length === 1 ? "" : "s"} found`;
       if (!rows.length) { list.innerHTML = `<div class="empty-state">No resources match your search.</div>`; return; }
-      list.innerHTML = rows.map(r => `
+      list.innerHTML = rows.map(r => {
+        const official = r.sample === false;
+        const chip = r.pdf
+          ? '<span class="chip chip--green">Official</span>'
+          : official
+            ? '<span class="chip chip--green">Official</span>'
+            : '<span class="chip chip--sample">Sample</span>';
+        const viewAttr = r.pdf
+          ? `href="${r.pdf}" target="_blank" rel="noopener noreferrer"`
+          : `href="#" data-demo-download="${r.title}"`;
+        const dlAttr = r.pdf
+          ? `href="${r.pdf}" download data-demo-pdf="${r.title}"`
+          : `href="#" data-demo-download="${r.title}"`;
+        return `
         <div class="resource-item" id="res-${r.id}">
           <div class="resource-item__icon">${iconSvg(r.type === "Video" ? "megaphone" : "book", 20)}</div>
           <div style="flex:1;min-width:0;">
-            <div class="card__meta"><span class="chip chip--blue">${r.cat}</span><span class="chip chip--placeholder">${r.type}</span><span class="chip chip--sample">Sample</span></div>
+            <div class="card__meta"><span class="chip chip--blue">${r.cat}</span><span class="chip chip--placeholder">${r.type}</span>${chip}</div>
             <h4>${r.title}</h4>
             <p>${r.desc} · Updated ${fmtDate(r.updated)}</p>
             <div class="btn-row">
-              <a class="btn btn--sm btn--outline" href="#" data-demo-download="${r.title}">${iconSvg("search-doc", 14)} View</a>
-              <a class="btn btn--sm btn--primary" href="#" data-demo-download="${r.title}">${iconSvg("download", 14)} Download</a>
+              <a class="btn btn--sm btn--outline" ${viewAttr}>${iconSvg("search-doc", 14)} View</a>
+              <a class="btn btn--sm btn--primary" ${dlAttr}>${iconSvg("download", 14)} Download</a>
             </div>
           </div>
-        </div>`).join("");
+        </div>`;
+      }).join("");
     }
     [q, cat].forEach(c => c.addEventListener("input", render));
     render();
@@ -555,17 +583,31 @@
           (!c || d.cat === c)
         );
         dcount.textContent = `${rows.length} file${rows.length === 1 ? "" : "s"} found`;
-        dl.innerHTML = rows.length ? rows.map(d => `
+        dl.innerHTML = rows.length ? rows.map(d => {
+          const official = d.sample === false;
+          const chip = d.pdf
+            ? '<span class="chip chip--green">Official</span>'
+            : official
+              ? '<span class="chip chip--green">Official</span>'
+              : '<span class="chip chip--sample">Sample</span>';
+          const viewAttr = d.pdf
+            ? `href="${d.pdf}" target="_blank" rel="noopener noreferrer"`
+            : `href="#" data-demo-download="${d.title}"`;
+          const dlAttr = d.pdf
+            ? `href="${d.pdf}" download data-demo-pdf="${d.title}"`
+            : `href="#" data-demo-download="${d.title}"`;
+          return `
           <div class="download-row">
             <div class="download-row__info">
               <strong>${d.title}</strong>
-              <span>${d.cat} · ${d.fmt} · Updated ${fmtDate(d.updated)} <span class="chip chip--sample">Sample</span></span>
+              <span>${d.cat} · ${d.fmt} · Updated ${fmtDate(d.updated)} ${chip}</span>
             </div>
             <div class="download-row__actions">
-              <a class="btn btn--sm btn--outline" href="#" data-demo-download="${d.title}">${iconSvg("search-doc", 15)} View</a>
-              <a class="btn btn--sm btn--primary" href="#" data-demo-download="${d.title}">${iconSvg("download", 15)} Download</a>
+              <a class="btn btn--sm btn--outline" ${viewAttr}>${iconSvg("search-doc", 15)} View</a>
+              <a class="btn btn--sm btn--primary" ${dlAttr}>${iconSvg("download", 15)} Download</a>
             </div>
-          </div>`).join("") : `<div class="empty-state">No files match your search.</div>`;
+          </div>`;
+        }).join("") : `<div class="empty-state">No files match your search.</div>`;
       }
       [dq, dc].forEach(c => c.addEventListener("input", renderDl));
       renderDl();
