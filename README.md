@@ -12,13 +12,13 @@ SOCCSKSARGEN Region XII, Philippines.
 - **Email:** region12@deped.gov.ph · **Web:** depedroxii.org
 - **QAD Chief:** Norman S. Valeroso, PhD
 - **Regional Director:** Atty. Alberto T. Escobarte, CESO II
-- **Structure:** Chief Education Supervisor (SG-24) · 5 EPS (SG-22) · 1 Admin Assistant (SG-7)
-- **47 official forms** (RO12-QAD-F008 … F673) catalogued in Forms & Templates
-- **Operations Manual PDF** downloadable from Resources / Download Center / About
+- **47 official forms** catalogued in Forms & Templates (request controlled files from QAD)
 
-## PDFs at repo root
+> The Operations Manual PDF is **not published** on the site by request.
 
-`qad-operations-manual.pdf` + 6 issuance PDFs (rm-/ra-/om-qad-2026-…).
+## Issuance PDFs at repo root
+
+`rm-…`, `ra-…`, `om-qad-2026-….pdf` (6 official issuances).
 
 ## Admin demo
 

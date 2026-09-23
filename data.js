@@ -10,7 +10,6 @@ window.QAD_DATA = {
     phones: "(083) 2288825 / (083) 2281893",
     email: "region12@deped.gov.ph",
     website: "https://depedroxii.org",
-    manualPdf: "qad-operations-manual.pdf",
     chief: "Norman S. Valeroso, PhD",
     chiefRole: "Chief, Quality Assurance Division (Chief Education Supervisor)",
     rd: "Atty. Alberto T. Escobarte, CESO II",
@@ -211,7 +210,6 @@ window.QAD_DATA = {
 
   /* ---------- Knowledge Hub resources (SAMPLE) ---------- */
   resources: [
-    { id: 11, cat: "QA Guidelines", title: "QAD Operations Manual", type: "PDF", desc: "Official Quality Assurance Division Operations Manual — purpose, organizational structure, office functions, legal bases, quality control plans, and forms/templates. Doc. Ref. Code OpsManual Rev 00.", updated: "2025-07-16", pdf: "qad-operations-manual.pdf", sample: false },
     { id: 12, cat: "FAQs", title: "What is the mandate of QAD?", type: "Web", desc: "QAD provides the Regional Office and SDOs a guide in decision-making and policy directions compliant with standards of quality basic education by promoting accountability and transparency towards continuous improvement. KRAs: (1) QA Framework, Policies, Systems and Processes; (2) Assessment, Monitoring, and Evaluation; (3) Regulatory and Developmental Services to Schools.", updated: "2025-07-16", sample: false },
     { id: 13, cat: "QA Guidelines", title: "QAD Structure at a Glance", type: "Web", desc: "DepEd SOCCSKSARGEN operates with eight functional divisions. QAD is headed by a Chief Education Supervisor, assisted by five (5) Education Program Supervisors and one (1) Administrative Assistant.", updated: "2025-07-16", sample: false },
     { id: 1, cat: "QA Guidelines", title: "[Sample] Regional QA Framework Primer", type: "PDF", desc: "Introductory guide to the regional quality assurance framework.", updated: "2026-02-10" },
@@ -249,8 +247,6 @@ window.QAD_DATA = {
 
   /* ---------- Download center (SAMPLE) ---------- */
   downloads: [
-    { id: 9, cat: "Policies", title: "QAD Operations Manual (OpsManual Rev 00)", fmt: "PDF", size: "1.9 MB", updated: "2025-07-16", pdf: "qad-operations-manual.pdf", sample: false },
-    { id: 10, cat: "Guidelines", title: "QAD Organizational Structure & Office Functions", fmt: "PDF", size: "1.9 MB", updated: "2025-07-16", pdf: "qad-operations-manual.pdf", sample: false },
     { id: 1, cat: "Policies", title: "[Sample] Regional QA Policy Record", fmt: "PDF", size: "—", updated: "2026-01-10" },
     { id: 2, cat: "Guidelines", title: "[Sample] Monitoring and Evaluation Guidelines", fmt: "PDF", size: "—", updated: "2025-11-01" },
     { id: 3, cat: "Forms", title: "[Sample] QA Forms Bundle", fmt: "PDF", size: "—", updated: "2026-01-12" },
