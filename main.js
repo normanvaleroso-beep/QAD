@@ -135,7 +135,7 @@
     (DATA.sdos || []).forEach(d => idx.push({ type: "SDO", title: d.name, desc: d.address, href: "index.html#sdo-directory", terms: [d.name, d.resources].join(" ") }));
     /* Static pages */
     [
-      ["About QAD", "Vision, mission, core functions, structure and personnel", "about.html"],
+      ["About QAD", "DepEd vision, mission, core values, functions, structure and personnel", "about.html"],
       ["Quality Management System", "One DepEd One QMS, ISO 9001:2015, quality policy and objectives", "qms.html"],
       ["Monitoring & Evaluation", "PIR, KPIs, performance dashboards and data visualization", "monitoring.html"],
       ["Programs & Services", "Twelve core quality assurance programs and services", "programs.html"],

@@ -4,8 +4,11 @@ Flat deployment package for GitHub Pages via https://github.com/normanvaleroso-b
 
 ## Upload
 https://github.com/normanvaleroso-beep/QAD/upload/main
-(Web upload flattens folders — this package is already flat.)
+
+## Vision, Mission & Core Values
+Site adopts official DepEd vision, mission, and core values
+(Maka-Diyos, Maka-tao, Makakalikasan, Makabansa).
 
 ## Issuances
-15 real issuance PDFs at package root (`om-*.pdf`, `rm-*.pdf`, `ra-*.pdf`, `sro-*.pdf`).
-No duplicates; Operations Manual intentionally not published.
+15 real issuance PDFs at package root. No duplicates.
+Operations Manual intentionally not published.
