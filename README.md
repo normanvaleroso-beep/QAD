@@ -1,27 +1,21 @@
-# Quality Assurance Division (QAD) — DepEd SOCCSKSARGEN Region XII
+# DepEd SOCCSKSARGEN (Region XII) — QAD Website
 
-Official website of the Quality Assurance Division, Department of Education —
-SOCCSKSARGEN Region XII, Philippines.
+Flat deployment package for GitHub Pages via https://github.com/normanvaleroso-beep/QAD
 
-**Live site:** https://normanvaleroso-beep.github.io/QAD/
+## Upload
+https://github.com/normanvaleroso-beep/QAD/upload/main
+(Web upload flattens folders — this package is already flat.)
 
-## Official content (from QAD Operations Manual)
+## Photos
+- `hero-qa.jpg` — Region XII turnover ceremony (home hero)
+- `about-team.jpg` — regional engagement group photo (About)
+- `chief-valeroso.jpg` — QAD Chief portrait (About personnel)
+- `best-practice-1/2/3.jpg` — Home & Resources stories
 
-- **Address:** Prime Regional Government Center, Brgy. Carpenter Hill, City of Koronadal
-- **Telephone:** (083) 2288825 / (083) 2281893
-- **Email:** region12@deped.gov.ph · **Web:** depedroxii.org
-- **QAD Chief:** Norman S. Valeroso, PhD
-- **Regional Director:** Atty. Alberto T. Escobarte, CESO II
-- **47 official forms** catalogued in Forms & Templates (request controlled files from QAD)
+## Issuances (PDF at package root)
+Real issuance PDFs only (`om-*.pdf`, `rm-*.pdf`, `ra-*.pdf`, `sro-*.pdf`).
+No duplicate issuance entries; no Operations Manual PDF.
 
-> The Operations Manual PDF is **not published** on the site by request.
-
-## Issuance PDFs at repo root
-
-`rm-…`, `ra-…`, `om-qad-2026-….pdf` (6 official issuances).
-
-## Admin demo
-
-`admin-dashboard.html` — `admin` / `admin123`
-
-© 2026 Department of Education – SOCCSKSARGEN Region XII. All Rights Reserved.
+## Note
+The QAD Operations Manual PDF is intentionally NOT published on this site.
+Textual references/crediting only; controlled copies are requested from QAD.
