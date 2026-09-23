@@ -5,26 +5,18 @@ SOCCSKSARGEN Region XII, Philippines.
 
 **Live site:** https://normanvaleroso-beep.github.io/QAD/
 
-## Structure
+## Structure (flat — assets at repo root)
 
 ```
 /
-├── index.html              # Home
-├── about.html              # About QAD
-├── programs.html           # Programs & Services
-├── qms.html                # Quality Management System
-├── monitoring.html         # Monitoring & Evaluation + Dashboard
-├── issuances.html          # Searchable document repository
-├── forms.html              # Forms & Templates library
-├── reports.html            # Reports
-├── announcements.html      # News & activities
-├── resources.html          # QA Knowledge Hub + Download Center
-├── contact.html            # Contact QAD
-├── admin-dashboard.html    # Demo admin CMS (admin/admin123)
-└── assets/
-    ├── css/styles.css
-    ├── js/ (data.js, main.js, admin.js)
-    └── img/ (hero, photos, favicon)
+├── index.html, about.html, programs.html, qms.html, monitoring.html,
+│   issuances.html, forms.html, reports.html, announcements.html,
+│   resources.html, contact.html, admin-dashboard.html
+├── styles.css               # main stylesheet
+├── data.js, main.js, admin.js
+├── hero-qa.jpg, about-team.jpg, best-practice-*.jpg, favicon.svg
+├── .nojekyll
+└── README.md
 ```
 
 ## Local preview
@@ -33,6 +25,10 @@ SOCCSKSARGEN Region XII, Philippines.
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
+
+## Admin demo
+
+`admin-dashboard.html` — login `admin` / `admin123`
 
 ## Notes
 
